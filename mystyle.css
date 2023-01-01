@@ -1,0 +1,333 @@
+/*  Tegan Jetton
+ *  Created for CIS 181, Fall 2022
+ *  Made with love
+ */
+
+@font-face{
+  font-family: 'Slidexiaxing';
+  src: url('fonts/Slidexiaxing Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Bonveno';
+  src: url('fonts/BonvenoCF-Light.otf');
+}
+
+a:link, a:visited{
+  text-decoration: none;
+  color: black;
+}
+
+/* changes links to show them when hovering */
+a:hover, a:active{
+  font-weight: bold;
+  border-bottom: solid 2px;
+}
+
+nav li:hover, nav li:active, nav li:hover a, nav li:active a{
+  background-color: #1f5285;
+  text-decoration: none;
+  color: white;
+  cursor: pointer;
+  border: 0;
+}
+
+html{
+  position:relative;
+  min-height: 100%;
+}
+
+ul{
+  list-style-type: none;
+}
+
+nav{
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+  background-color:  #99ccff;
+  top: 0;
+  z-index: 5;
+}
+
+nav li{
+  display: inline-block;
+  color: black;
+}
+
+nav li a{
+  display: block;
+  width: 100%;
+  padding: 1em;
+  border: 0;
+}
+
+body{
+  font-family: 'Bonveno', 'Arial', sans-serif;
+  height: 100vh;
+  position: relative;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  padding: 8rem 0;
+}
+footer{
+  position: fixed;
+  bottom: 0;
+  height: 3rem;
+  width: 100%;
+  background-color:rgba(255, 255, 255, .75);
+}
+
+h1{
+  position: relative;
+  text-align: center;
+  font-size: 5em;
+  font-family: 'Slidexiaxing', 'MS Yahei';
+  
+  color: white;
+  text-shadow: 5px 5px 1px #000;
+  z-index: 3;
+}
+
+h2{
+  position: relative;
+  text-align: center;
+  font-size: 2em;
+  text-indent: 1.25em; /*needs or h2 doesn't line up with h1, not sure why*/
+  font-family: 'Bonveno', sans-serif;
+  margin: -1em 0 1em 0;
+  color: white;
+  text-shadow: 3px 3px 1px #000;
+  z-index: 3;
+}
+
+h3{
+  padding: 1em;
+  width: 30%;
+  background-color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  margin: 1em;
+}
+
+h4{
+  padding: 1em;
+}
+/* keeps the photos in articles contained */
+article{
+  overflow: hidden;
+}
+
+/* Switch overflow to visible so the zoom effect comes outside the article */
+article:hover, article:active{
+  overflow: visible;
+}
+
+section{
+  display: flex;
+  max-width: 65%;
+  z-index: 3;
+  flex-direction: column;
+}
+
+section p{
+  padding: 1em;
+}
+
+figure{
+  overflow: hidden;
+}
+
+figcaption{
+  font-size: .75em;
+  background-color:white;
+}
+
+/* table formatting */
+table{
+  margin: .5em;
+  font-size: 1.25em;
+  border-spacing: .25em .5em;
+}
+
+/* table cell formatting */
+th, td {
+  padding: .5em;
+  background-color: #99ccff;
+  text-align: center;
+  border-radius: 5px;
+}
+
+/* used for photo credits */
+.annotation{
+  font-size: .65em;
+  padding: 1em;
+  text-align: center;
+}
+/* generally wanted the page flow to go top down */
+.bubble{
+  flex-direction: column;
+  background: white;
+  box-shadow:3px 3px 3px black;
+  border-radius: 25px;
+  margin: 1em;
+}
+
+.bubble figure{
+  max-width: 100%;
+}
+
+/* Had to make containers for when I wanted things to go in rows (e.g. the architecture on the first page) */
+.container-row{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+/* Used for the transportation page */
+.sideContainer{
+  display: flex;
+  max-width: 65%;
+  margin-top: 5vh;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+/* for images and to add transition time when they zoom in*/
+.image{
+  width: 100%;
+  transition:transform 0.25s ease;
+}
+
+/* zoom in on images when hover or tapped */
+.image:hover, .image:active {
+    transform:scale(2.1);
+}
+/* formatting for row items page 1*/
+.pg1{
+  width: 30%;
+}
+
+/* formatting for row items page 4*/
+.pg4{
+  width: 45%;
+}
+
+/* backgrounds for each page */
+/* ------------------------- */
+#home{
+  background: no-repeat url("images/harbin-skyline-large.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#festival{
+  background: no-repeat url("images/harbin-festival-large.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#transportation{
+  background: no-repeat url("images/taipingqiao-station-large.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+#about{
+  background: no-repeat url("images/khoshekh-arm-edit.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+}
+/* ---------------------------- */
+
+/* h1,h2,h3 formatting for index */
+/* ----------------------------- */
+#home-h1{
+  font-size: 10em;
+}
+
+#home-h2{
+  font-size: 4em;
+  letter-spacing: 1em;
+  margin-bottom: 25vh;
+}
+
+/* ----------------------------- */
+
+/* subway diagram */
+#diagram{
+  z-index: 4;
+  overflow: hidden;
+}
+
+#festival-photos figure {
+  width: 30%;
+  flex-grow: 1;
+  align-self: flex-start;
+}
+
+/* Responsive section for smaller devices. 
+ * This section changes widths/font sizes/
+ * lettering so items are appropriately 
+ * sized on smaller screens*/
+/* -------------------------------------- */
+@media (max-width: 60em){
+  section{
+    max-width:90%;
+  }
+  
+  footer{
+    height: 10vh;
+    width: 100%;
+    z-index: 2;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  .sideContainer{
+    max-width: 90%;
+    align-items: center;
+  }
+  
+  .image:hover, .image:active {
+    transform:scale(1.15);
+  }
+  .bubble{
+    width: 100%;
+    margin: 1em 0;
+  }
+
+  #intro{
+    width: 100%;
+  }
+  
+  #home-h1, #home-h2{
+    font-size: 4em;
+    letter-spacing: .25em;
+    text-indent: 0;
+    margin: 0 auto;
+  }
+  
+  #home-h3{
+    width: 100%;
+  }
+  
+  #diagram, #table {
+    width: 100%;
+  }
+  
+  #festival-photos figure {
+    width: 90%;
+  }
+}
+/* -------------------------------------- */
